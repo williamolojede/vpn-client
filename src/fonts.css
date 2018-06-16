@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'sf_pro_displaybold';
+  src: url('assets/fonts/sf-pro-display-bold-webfont.woff2') format('woff2'),
+       url('assets/fonts/sf-pro-display-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sf_pro_displaymedium';
+  src: url('assets/fonts/sf-pro-display-medium-webfont.woff2') format('woff2'),
+       url('assets/fonts/sf-pro-display-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sf_pro_textbold';
+  src: url('assets/fonts/sf-pro-text-bold-webfont.woff2') format('woff2'),
+       url('assets/fonts/sf-pro-text-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sf_pro_textheavy';
+  src: url('assets/fonts/sf-pro-text-heavy-webfont.woff2') format('woff2'),
+       url('assets/fonts/sf-pro-text-heavy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

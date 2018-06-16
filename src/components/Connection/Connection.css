@@ -1,0 +1,116 @@
+.connection {
+  width: fit-content;
+  text-align: center;
+}
+
+.connection__status {
+  font-size: 24px;
+  font-family: 'sf_pro_displaybold';
+}
+
+.connection__status.connection__on {
+  color: #ff7387;
+}
+
+.connection__status.connection__off {
+  background-color: #80ff4b;
+}
+
+.connection__ip {
+  margin-top: 10px;
+  margin-bottom: 55px;
+  
+}
+
+.connection__ip-address {
+  font-family: 'sf_pro_displaybold';
+  font-size: 80px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.connection__ip-location {
+  font-family: 'sf_pro_displaymedium';
+  font-size: 24px;
+  color: #8c8c8d;
+}
+
+.connection__ip-location span {
+  color: #fff;
+}
+
+.connection__select-location {
+  display: flex;
+}
+
+.select-location {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.select-location .select-location__control {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.select-location .select-location__value-container {
+  padding-left: 30px;
+}
+
+.select-location .select-location__single-value {
+  color: #fff;
+  font-size: 24px;
+  font-family: 'sf_pro_displaybold';
+}
+
+.select-location__indicators {
+  padding-right: 20px;
+}
+
+.select-location .select-location__indicator {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.select-location__indicator::after,
+.select-location__indicator::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  color: #fff;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: .4;
+}
+
+.select-location__indicator::before {
+  content: '\f0d8';
+  margin-bottom: 8px;
+}
+
+.select-location__indicator::after {
+  content: "\f0d7";
+}
+
+
+
+.select-location__indicator svg {
+  display: none;
+}
+
+.select-location__indicator-separator {
+  display: none;
+}
+.connection__select-location-btn {
+  font-family: 'sf_pro_displaybold';
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 30px;
+  font-size: 24px;
+}
+

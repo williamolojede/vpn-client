@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="962px" height="962px" viewBox="0 0 962 962" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>wave</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A4" transform="translate(-51.000000, -51.000000)" fill="#FFFFFF">
+            <g id="wave" transform="translate(52.000000, 52.000000)">
+                <circle id="wave-1" stroke-opacity="0.05" stroke="#FFFFFF" fill-opacity="0.02" cx="480" cy="480" r="480"></circle>
+                <circle id="wave-2" stroke-opacity="0.1" stroke="#FFFFFF" fill-opacity="0.04" cx="480" cy="480" r="225"></circle>
+                <circle id="wave-3" stroke-opacity="0.1" stroke="#FFFFFF" fill-opacity="0.04" cx="480" cy="480" r="55"></circle>
+                <circle id="pin" cx="480" cy="480" r="5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
