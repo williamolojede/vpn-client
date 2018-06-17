@@ -8,22 +8,25 @@
   font-family: 'sf_pro_displaybold';
 }
 
-.connection__status.connection__on {
+.connection__status.connection__off {
   color: #ff7387;
 }
 
-.connection__status.connection__off {
-  background-color: #80ff4b;
+.connection__status.connection__on {
+  color: #80ff4b;
 }
 
 .connection__ip {
   margin-top: 10px;
   margin-bottom: 55px;
-  
 }
 
 .connection__ip-address {
   font-family: 'sf_pro_displaybold';
+  max-width: 585px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 80px;
   color: #fff;
   margin-bottom: 20px;
@@ -41,11 +44,13 @@
 
 .connection__select-location {
   display: flex;
+  justify-content: center
 }
 
 .select-location {
   flex: 1;
   margin-right: 20px;
+  width: 21rem;
 }
 
 .select-location .select-location__control {
@@ -106,11 +111,13 @@
 .select-location__indicator-separator {
   display: none;
 }
+
 .connection__select-location-btn {
   font-family: 'sf_pro_displaybold';
   background-color: #fff;
   border-radius: 10px;
   padding: 20px 30px;
   font-size: 24px;
+  cursor: pointer;
 }
 

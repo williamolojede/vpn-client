@@ -3,4 +3,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 100;
 }
+
+.app {
+  position: relative;
+  background:  
+    url("assets/grid.svg"),
+    radial-gradient(circle, rgba(16,16, 18, 0), rgba(16,16, 18, 1));
+}
+
+
+.app::after {
+  content: url("./assets/wave.svg");
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+}
+
+

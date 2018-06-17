@@ -4,14 +4,6 @@
   width: 100%;
 }
 
-.site-header::after {
-  content: url("../../assets/wave.svg");
-  position: absolute;
-  left: 50%;
-  top: -265px;
-  transform: translateX(-50%);
-}
-
 .site-header__wrapper {
   display: flex;
   align-items: center;

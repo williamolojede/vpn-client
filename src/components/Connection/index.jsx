@@ -1,78 +1,98 @@
 import React, { Component } from 'react';
 import Select from 'react-select'
-import axios from "axios";
+import classNames from "classnames";
+
 import './Connection.css';
 
 class Connection extends Component {
 
   locationOption = [
     { value: "usa", label: "USA - Automatic"},
-    { value: "United Kingdom", label: "United Kingdom"},
-    { value: "Germany", label: "Germany"},
-    { value: "Turkey", label: "Turkey"},
+    { value: "uk", label: "United Kingdom"},
+    { value: "germany", label: "Germany"},
+    { value: "turkey", label: "Turkey"},
+    {value: "china", label: "China" }
   ]
 
   state = {
-    isLoading: true,
-    ipInfo: {
-      address: null,
-      city: null,
-      country: null
-    }
+    selectedLocation: this.locationOption[0].value,
   }
 
-  componentDidMount() {
-    this.getIPInfo()
-  }
-
-  getIPInfo = async() => {
-    const { 
-      data: {
-        ip,
-        city,
-        country_name
-      }
-    }  = await axios.get("https://json.geoiplookup.io/api");
-  
-    // console.log(data)
+  handleInputChange = ({ value }) => {
     this.setState({
-      isLoading: false,
-      ipInfo: {
-        address: ip,
-        city: city,
-        country: country_name
-      }
+      selectedLocation: value
     })
   }
-  handleInputChange = (e) => {
-    console.log(e)
-  }
+
+  buttonHandler = () => {
+    this.props.isConnected ?
+      this.props.buttonHandler({
+        type: 'disconnect', 
+      })
+      :
+      this.props.buttonHandler({
+        type: 'changeLocation', 
+        value: this.state.selectedLocation
+      })
+  } 
 
   render () {
     const {
       address,
       city,
       country
-    } = this.state.ipInfo
+    } = this.props.ipInfo
     return (
       <div className="connection">
-        <p className="connection__status connection__on">YOU'RE NOT PROTECTED</p>
+        <p 
+          className={classNames(
+            'connection__status',
+            {
+              'connection__on': this.props.isConnected,
+              'connection__off': !this.props.isConnected
+            }
+          )}
+        >
+          {
+            this.props.isConnected 
+              ? "YOU'RE PROTECTED"
+              : "YOU'RE NOT PROTECTED"
+          }
+        </p>
         <div className="connection__ip">
           <h1 className="connection__ip-address">{address}</h1>
           <p className="connection__ip-location">
-            Current Location: 
-            <span> {city}, {country}</span>
+            {
+              this.props.isConnected
+                ? "Virtual Location: "
+                : "Current Location: "
+            }
+            <span>{city}, {country}</span>
           </p>
         </div>
         <div className="connection__select-location">
-          <Select
-            className="select-location"
-            classNamePrefix="select-location"
-            defaultValue={this.locationOption[0]}
-            options={this.locationOption}
-            onChange={this.handleInputChange}
-          />
-          <button className="connection__select-location-btn">CONNECT</button>
+          {
+            !this.props.isConnected && 
+            <Select
+              className="select-location"
+              classNamePrefix="select-location"
+              defaultValue={this.locationOption[0]}
+              options={this.locationOption}
+              onChange={this.handleInputChange}
+            />
+          }
+          
+          <button 
+            className="connection__select-location-btn"
+            onClick={this.buttonHandler}
+            type="button"
+          >
+            {
+              this.props.isConnected
+                ? 'DISCONNECT'
+                : 'CONNECT'
+            }
+          </button>
         </div>
       </div>
     ) 
@@ -80,4 +100,4 @@ class Connection extends Component {
 }
 
 
-export default Connection;
+export default Connection
