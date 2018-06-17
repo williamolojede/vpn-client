@@ -22,7 +22,10 @@ const Map = compose(
   <GoogleMap
     zoom={zoomLevel}
     center={location}
-    defaultOptions={{ styles: demoFancyMapStyles }}
+    defaultOptions={{ 
+      styles: demoFancyMapStyles,
+      disableDefaultUI: true
+    }}
   ></GoogleMap>
 ))
 
