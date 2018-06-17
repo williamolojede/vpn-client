@@ -17,7 +17,9 @@ class App extends Component {
     ipInfo: {
       address: null,
       city: null,
-      country: null
+      country: null,
+      longitude: null,
+      latitude: null,
     }
   }
 
@@ -46,14 +48,18 @@ class App extends Component {
       data: {
         ip,
         city,
-        country_name
+        country_name,
+        longitude,
+        latitude,
       }
     }  = await axios.get(`https://json.geoiplookup.io/${endpoint}`)
   
     const ipInfo = {
       address: ip,
       city: city,
-      country: country_name
+      country: country_name,
+      longitude: Number(longitude),
+      latitude: Number(latitude),
     }
 
     this.setState({
@@ -90,18 +96,33 @@ class App extends Component {
   }
 
   render() {
+    const {
+      isConnected,
+      ipInfo,
+      zoomLevel,
+    } = this.state
+    
     return (
       <div className="app">
         <Header />
         <main className="site-main">
           <Connection 
-            isConnected={this.state.isConnected}
-            ipInfo={this.state.ipInfo}
+            isConnected={isConnected}
+            ipInfo={ipInfo}
             buttonHandler={this.buttonHandler}
           />
           
         </main>
-        <Map zoomLevel={this.state.zoomLevel}/>
+        {
+          ipInfo.longitude !== null 
+          && <Map zoomLevel={zoomLevel}
+            location={{
+              lat: ipInfo.latitude,
+              lng: ipInfo.longitude
+            }}
+          />
+        }
+        
       </div>
     )
   }

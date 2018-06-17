@@ -18,10 +18,10 @@ const Map = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(({zoomLevel}) => (
+)(({zoomLevel, location}) => (
   <GoogleMap
     zoom={zoomLevel}
-    defaultCenter={{ lat: 6.60184, lng: 3.35149 }}
+    center={location}
     defaultOptions={{ styles: demoFancyMapStyles }}
   ></GoogleMap>
 ))
