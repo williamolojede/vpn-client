@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select'
-import classNames from "classnames";
+import classNames from "classnames"
 
 import './Connection.css';
 

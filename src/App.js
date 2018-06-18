@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+
 import './App.css'
 
 import Header from "./components/Header"
 import Connection from "./components/Connection"
 import Map from './components/Map'
-import axios from "axios";
+import Wave from './components/Wave'
+
+import axios from "axios"
 
 import getNewIP from "./api"
 
@@ -100,17 +103,22 @@ class App extends Component {
       isConnected,
       ipInfo,
       zoomLevel,
+      isLoading,
     } = this.state
     
     return (
       <div className="app">
         <Header />
         <main className="site-main">
+        {
+          !this.state.isLoading
+          &&
           <Connection 
             isConnected={isConnected}
             ipInfo={ipInfo}
             buttonHandler={this.buttonHandler}
           />
+        }
           
         </main>
         {
@@ -122,7 +130,10 @@ class App extends Component {
             }}
           />
         }
-        
+        <Wave 
+          isConnected={isConnected}
+          isLoading={isLoading}
+        />
       </div>
     )
   }
