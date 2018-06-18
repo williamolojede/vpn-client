@@ -134,6 +134,12 @@ class App extends Component {
           isConnected={isConnected}
           isLoading={isLoading}
         />
+        <footer className="site-footer">
+          <p>
+            Built by <a href="https://twitter.com/williamolojede" target="_blank" rel="noopener noreferrer">William Olojede</a>
+          </p>
+          <p>Designed by <a href="https://twitter.com/JoAccord" target="_blank" rel="noopener noreferrer">Joshua Oluwagbemiga</a></p>
+        </footer>
       </div>
     )
   }

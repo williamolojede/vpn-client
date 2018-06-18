@@ -14,3 +14,22 @@
     radial-gradient(circle, rgba(16,16, 18, 0), rgba(16,16, 18, 1));
 }
 
+.site-footer {
+  text-align: center;
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.site-footer p {
+  color: #fff;
+  font-family: 'sf_pro_displaymedium';
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.site-footer a {
+  color: inherit;
+}
